@@ -11,15 +11,15 @@ layout: default
 
   {%- if site.posts.size > 0 -%}
     <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2> -->
-    <article class="cf w-100 flex flex-row flex-wrap">
+    <article class="cf ma2 flex flex-row flex-wrap justify-center">
       {%- for post in site.posts -%}
-      <div class="w5 w-25-m w-20-l ma2 mb4">
+      <div class="w-third pa2 mb4">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <!-- <span class="post-meta">{{ post.date | date: date_format }}</span> -->
         <div class="aspect-ratio aspect-ratio--1x1">
           <img src="" alt="" class="db w-100 bg-black-10 db bg-center cover aspect-ratio--object">
         </div>
-        <div class="pa3 ">
+        <div class="pa2 ph0 ">
           <h3 class="db f3 mb1 mt3">
             <a class="f4 fw6 db black link hover-blue" href="{{ post.url | relative_url }}">
               {{ post.title | escape }}

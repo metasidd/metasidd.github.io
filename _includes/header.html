@@ -1,6 +1,6 @@
 <header class="flex justify-center">
 
-  <div class="wrapper w-60">
+  <div class="wrapper mw8">
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
@@ -17,13 +17,24 @@
         </label>
 
         <div class="trigger">
-          <a class="link dim black b f6 f5-ns dib mr3" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
-          {%- for path in page_paths -%}
-            {%- assign my_page = site.pages | where: "path", path | first -%}
-            {%- if my_page.title -%}
-            <a class="link dim gray f6 f5-ns dib mr3" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-            {%- endif -%}
-          {%- endfor -%}
+
+          <div class="absolute fixed top-0 left-0 w-100 pa3 bg-white-80 z-9999 flex justify " style="backdrop-filter: blur(25px)">
+              <a class="link black b black-80 hover-near-black f6 f5-ns dib mr3 self-start pa2" href="{{ "/" | relative_url }}">{{ site.author | escape }}</a>
+            <div class="ml-auto">
+                {%- for path in page_paths -%}
+                  {%- assign my_page = site.pages | where: "path", path | first -%}
+                  {%- if my_page.title -%}
+                    <a class="link black-80 hover-near-black b f6 f5-ns dib mr3  self-end pa2" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+                  {%- endif -%}
+                {%- endfor -%}  
+            </div>
+        </div>
+
+          <!-- <a class="link dim black b f3 f3-ns dib mr3" rel="author" href="{{ "/" | relative_url }}">{{ site.author | escape }}</a> -->
+          {% if page.url == "/" %}
+          <h1 class="f1 mt6 mb5">{{ site.description | escape }}</h3>
+          {% endif %}
+
         </div>
       </nav>
     {%- endif -%}
