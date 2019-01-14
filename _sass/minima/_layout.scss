@@ -2,11 +2,6 @@
  * Site header
  */
 .site-header {
-  border-top: 5px solid $grey-color-dark;
-  border-bottom: 1px solid $grey-color-light;
-  min-height: $spacing-unit * 1.865;
-  line-height: $base-line-height * $base-font-size * 2.25;
-
   // Positioning context for the mobile navigation icon
   position: relative;
 }
@@ -121,15 +116,6 @@
 /**
  * Site footer
  */
-.site-footer {
-  border-top: 1px solid $grey-color-light;
-  padding: $spacing-unit 0;
-}
-
-.footer-heading {
-  @include relative-font-size(1.125);
-  margin-bottom: $spacing-unit / 2;
-}
 
 .contact-list,
 .social-media-list {
@@ -272,18 +258,8 @@
 
 .social-media-list {
   display: table;
-  margin: 0 auto;
   li {
     float: left;
-    margin: 0 5px;
-    &:first-of-type { margin-left: 0 }
-    &:last-of-type { margin-right: 0 }
-    a {
-      display: block;
-      padding: $spacing-unit / 4;
-      border: 1px solid $grey-color-light
-    }
-    &:hover .svg-icon { fill: currentColor; }
   }
 }
 

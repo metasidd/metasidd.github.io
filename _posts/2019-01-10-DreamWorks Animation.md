@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "This post demonstrates post content styles"
+title: "DreamWorks Animation"
+description: "There will be a description for this topic. Not too long."
 categories: junk
 author: "Bart Simpson"
 meta: "Springfield"
