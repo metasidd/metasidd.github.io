@@ -3,19 +3,22 @@ layout: default
 ---
 <article class="w-100 flex flex-column" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="mw-100 pa3 db vh-50  bg-black-05">
-    <h1 class="f1 mb0" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="">
-      <time class="" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        {{ page.date | date: date_format }}
-      </time>
-      {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author | escape }}</span></span>
-      {%- endif -%}</p>
+  <header class="pa3 db bg-center vh-50 aspect-ratio aspect-ratio--16x9">
+    <img src="" alt="" class="cover aspect-ratio--object bg-black-05 ">
+    <div class="mw8 center bottom-0">
+        <h1 class="f1 mb0" itemprop="name headline">{{ page.title | escape }}</h1>
+        <p class="">
+          <time class="" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            {{ page.date | date: date_format }}
+          </time>
+          {%- if page.author -%}
+            • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author | escape }}</span></span>
+          {%- endif -%}</p>
+    </div>
   </header>
 
-  <div class="mw8 self-center pt4 pb4" itemprop="articleBody">
+  <div class="mw8-ns self-center pt4 pb4 pl3 ph3  post-content" itemprop="articleBody">
     {{ content }}
   </div>
 

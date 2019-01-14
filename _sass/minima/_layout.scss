@@ -229,10 +229,21 @@
 
 .post-content {
   margin-bottom: $spacing-unit;
-
+  p, li, table, pre{
+    font-family: $secondary-font-family;
+    @media screen and (min-width: $on-large) {
+      @include relative-font-size(1.5);
+    }
+  }
+  table *{
+    border: Solid 1px $grey-color-light;
+    border-spacing: 0;
+    margin: 0;
+    padding:0;
+  }
   h2 {
-    @include relative-font-size(1.75);
-
+    // font-size: 100px;
+    @include relative-font-size(1.5);
     @media screen and (min-width: $on-large) {
       @include relative-font-size(2);
     }
