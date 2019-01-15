@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<article class="w-100 flex flex-column" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="barba-container w-100 flex flex-column" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="pa3 db bg-center vh-50 aspect-ratio aspect-ratio--16x9">
     <img src="" alt="" class="cover aspect-ratio--object bg-black-05 ">
@@ -21,7 +21,15 @@ layout: default
   <div class="mw8-ns self-center pt4 pb4 pl3 ph3  post-content" itemprop="articleBody">
     {{ content }}
   </div>
-
+  
+  <div class="PageNavigation absolute fixed w-100 bottom-0 left-0 pa3 bg-light-yellow flex justify-between">
+      {% if page.previous.url %}
+        <a id="previousProject" class="prev pa2 black link b" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+      {% endif %}
+      {% if page.next.url %}
+        <a id="nextProject" class="next pa2 black link b" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+      {% endif %}
+    </div>
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
   {%- endif -%}
