@@ -1,12 +1,12 @@
-<header id="navHeader" class="flex justify-center">
+<header class="flex justify-center flex-column">
 
-  <div class="wrapper mw8">
+  <div id="navHeader" class="wrapper">
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
 
     {%- if titles_size > 0 -%}
-    <nav class="ph3 pr3 pt4 pb4">
+    <nav class="relative ph3 pr3 pt4 pb4">
         <input type="checkbox" id="nav-trigger" class="nav-trigger dn" />
         <label for="nav-trigger" class="dn">
           <span class="menu-icon">
@@ -15,10 +15,7 @@
             </svg>
           </span>
         </label>
-
-        <div class="trigger">
-
-          <div class="absolute fixed top-0 left-0 w-100 pa3 bg-white-80 z-9999 flex justify " style="backdrop-filter: blur(25px)">
+          <div class="trigger absolute fixed top-0 left-0 w-100 pa3 bg-white-80 z-9999 flex justify " style="backdrop-filter: blur(25px)">
               <a class="link black b black-80 hover-near-black f6 f5-ns dib mr3 self-start pa2" href="{{ "/" | relative_url }}">{{ site.author | escape }}</a>
             <div class="ml-auto">
                 {%- for path in page_paths -%}
@@ -29,14 +26,13 @@
                 {%- endfor -%}  
             </div>
         </div>
-
-          <!-- <a class="link dim black b f3 f3-ns dib mr3" rel="author" href="{{ "/" | relative_url }}">{{ site.author | escape }}</a> -->
-          {% if page.url == "/" %}
-          <h1 class="f1 mt6 mb5">{{ site.description | escape }}</h3>
-          {% endif %}
-
-        </div>
       </nav>
-    {%- endif -%}
+  </div>
+  {%- endif -%}
+  <div id="headerIntroText" class="w-100 db pa0 ma0 flex justify-center">
+    <!-- <a class="link dim black b f3 f3-ns dib mr3" rel="author" href="{{ "/" | relative_url }}">{{ site.author | escape }}</a> -->
+    {% if page.url == "/" %}
+    <h1  class="f1 mt6 mb5 mw8">{{ site.description | escape }}</h3>
+    {% endif %}
   </div>
 </header>
